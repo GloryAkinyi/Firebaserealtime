@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".InsertionActivity">
@@ -15,43 +14,54 @@
         android:layout_height="wrap_content"/>
 
     <EditText
-        android:id="@+id/etEmpName"
+        android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_background"
+        android:paddingLeft="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:textColorHint="@color/black"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Enter name" />
 
     <EditText
-        android:id="@+id/etEmpAge"
+        android:id="@+id/position"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_background"
+        android:paddingLeft="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:textColorHint="@color/black"
         android:ems="10"
-        android:hint="Enter age" />
+        android:hint="Enter position" />
 
     <EditText
-        android:id="@+id/etEmpSalary"
+        android:id="@+id/salary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
+        android:background="@drawable/custom_background"
+        android:paddingLeft="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:textColorHint="@color/black"
         android:ems="10"
-        android:hint="Enter salary"
-        android:inputType="textPersonName"/>
+        android:hint="Enter salary" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="#4CAF50"
+        android:textColor="@color/white"
+        android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
-        android:text="Save Data"/>
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:backgroundTint="#040306"
+        android:text="Submit Details" />
 </LinearLayout>

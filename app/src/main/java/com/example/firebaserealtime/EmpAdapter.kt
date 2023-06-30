@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.core.view.View
 
-class EmpAdapter(private val empList: ArrayList<EmployeeModel>) :
+class EmpAdapter(private val empList: ArrayList<PersonModel>) :
     RecyclerView.Adapter<EmpAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
@@ -26,7 +26,7 @@ class EmpAdapter(private val empList: ArrayList<EmployeeModel>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentEmp = empList[position]
-        holder.tvEmpName.text = currentEmp.empName
+        holder.tvEmpName.text = currentEmp.Name
     }
 
     override fun getItemCount(): Int {

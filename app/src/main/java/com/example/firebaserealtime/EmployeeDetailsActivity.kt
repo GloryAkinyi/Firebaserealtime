@@ -14,7 +14,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
     private lateinit var tvEmpId: TextView
     private lateinit var tvEmpName: TextView
-    private lateinit var tvEmpAge: TextView
+    private lateinit var tvEmpPosition: TextView
     private lateinit var tvEmpSalary: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
@@ -29,40 +29,40 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
         btnUpdate.setOnClickListener {
             openUpdateDialog(
-                intent.getStringExtra("empId").toString(),
-                intent.getStringExtra("empName").toString()
+                intent.getStringExtra("Id").toString(),
+                intent.getStringExtra("Name").toString()
             )
         }
 
         btnDelete.setOnClickListener {
             deleteRecord(
-                intent.getStringExtra("empId").toString()
+                intent.getStringExtra("Id").toString()
             )
         }
 
     }
 
     private fun initView() {
-        tvEmpId = findViewById(R.id.tvEmpId)
-        tvEmpName = findViewById(R.id.tvEmpName)
-        tvEmpAge = findViewById(R.id.tvEmpAge)
-        tvEmpSalary = findViewById(R.id.tvEmpSalary)
+        tvEmpId = findViewById(R.id.tvId)
+        tvEmpName = findViewById(R.id.tvName)
+        tvEmpPosition = findViewById(R.id.tvPosition)
+        tvEmpSalary = findViewById(R.id.tvsalary)
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
     }
 
     private fun setValuesToViews() {
-        tvEmpId.text = intent.getStringExtra("empId")
-        tvEmpName.text = intent.getStringExtra("empName")
-        tvEmpAge.text = intent.getStringExtra("empAge")
-        tvEmpSalary.text = intent.getStringExtra("empSalary")
+        tvEmpId.text = intent.getStringExtra("Id")
+        tvEmpName.text = intent.getStringExtra("Name")
+        tvEmpPosition.text = intent.getStringExtra("Position")
+        tvEmpSalary.text = intent.getStringExtra("Salary")
 
     }
 
     private fun openUpdateDialog(
-        empId: String,
-        empName: String
+        Id: String,
+        Name: String
     ) {
         val mDialog = AlertDialog.Builder(this)
         val inflater = layoutInflater
@@ -70,34 +70,34 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
         mDialog.setView(mDialogView)
 
-        val etEmpName = mDialogView.findViewById<EditText>(R.id.etEmpName)
-        val etEmpAge = mDialogView.findViewById<EditText>(R.id.etEmpAge)
-        val etEmpSalary = mDialogView.findViewById<EditText>(R.id.etEmpSalary)
+        val etEmpName = mDialogView.findViewById<EditText>(R.id.etName)
+        val etEmpPosition = mDialogView.findViewById<EditText>(R.id.etPosition)
+        val etEmpSalary = mDialogView.findViewById<EditText>(R.id.etSalary)
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
-        etEmpName.setText(intent.getStringExtra("empName").toString())
-        etEmpAge.setText(intent.getStringExtra("empAge").toString())
-        etEmpSalary.setText(intent.getStringExtra("empSalary").toString())
+        etEmpName.setText(intent.getStringExtra("Name").toString())
+        etEmpPosition.setText(intent.getStringExtra("Position").toString())
+        etEmpSalary.setText(intent.getStringExtra("Salary").toString())
 
-        mDialog.setTitle("Updating $empName Record")
+        mDialog.setTitle("Updating $Name Record")
 
         val alertDialog = mDialog.create()
         alertDialog.show()
 
         btnUpdateData.setOnClickListener {
             updateEmpData(
-                empId,
+                Id,
                 etEmpName.text.toString(),
-                etEmpAge.text.toString(),
+                etEmpPosition.text.toString(),
                 etEmpSalary.text.toString()
             )
 
-            Toast.makeText(applicationContext, "Employee Data Updated", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext,  "Data Updated Successfully", Toast.LENGTH_LONG).show()
 
             //we are setting updated data to our textviews
             tvEmpName.text = etEmpName.text.toString()
-            tvEmpAge.text = etEmpAge.text.toString()
+            tvEmpPosition.text = etEmpPosition.text.toString()
             tvEmpSalary.text = etEmpSalary.text.toString()
 
             alertDialog.dismiss()
@@ -107,22 +107,22 @@ class EmployeeDetailsActivity : AppCompatActivity() {
     private fun updateEmpData(
         id: String,
         name: String,
-        age: String,
+        position: String,
         salary: String
     ) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Employees").child(id)
-        val empInfo = EmployeeModel(id, name, age, salary)
+        val empInfo = PersonModel(id, name, position, salary)
         dbRef.setValue(empInfo)
     }
 
     private fun deleteRecord(
         id: String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("Employees").child(id)
+        val dbRef = FirebaseDatabase.getInstance().getReference("person").child(id)
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {
-            Toast.makeText(this, "Employee data deleted", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Data deleted", Toast.LENGTH_LONG).show()
 
             val intent = Intent(this, FetchingActivity::class.java)
             finish()

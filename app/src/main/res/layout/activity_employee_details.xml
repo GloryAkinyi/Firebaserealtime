@@ -3,38 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bg_gradient"
     android:layout_height="match_parent"
     tools:context=".EmployeeDetailsActivity">
 
-    <Button
-        android:id="@+id/btnUpdate"
+    <TextView
+        android:id="@+id/person"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Update"
-        android:backgroundTint="#00BCD4"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:text="Personal Details"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.393"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="125dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#03A9F4"
+        android:text="Update info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintVertical_bias="0.079" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Delete"
+        android:layout_height="55dp"
         android:backgroundTint="#E40404"
+        android:text="Delete record"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnUpdate"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Emp id"
+                    android:text="Id"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -72,7 +90,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvEmpId"
+                    android:id="@+id/tvId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -108,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Emp Name"
+                    android:text="Name"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -120,7 +138,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvEmpName"
+                    android:id="@+id/tvName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -157,7 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Emp Age"
+                    android:text="Position"
                     android:textColor="@color/black"
                     android:textSize="15sp"
 
@@ -172,13 +190,13 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvEmpAge"
+                    android:id="@+id/tvPosition"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text=""
-                    android:textColor="#806666"
+                    android:textColor="#070505"
                     android:textSize="15sp"
 
                     />
@@ -211,7 +229,7 @@
                     android:layout_gravity="center"
 
                     android:gravity="center"
-                    android:text="Emp Salary"
+                    android:text="Salary"
                     android:textColor="@color/black"
                     android:textSize="15sp"
 
@@ -226,7 +244,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvEmpSalary"
+                    android:id="@+id/tvsalary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -241,7 +259,6 @@
 
 
         </LinearLayout>
-
 
     </LinearLayout>
 

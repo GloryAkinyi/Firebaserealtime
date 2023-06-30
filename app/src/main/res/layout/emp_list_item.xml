@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="8dp"
+    app:cardElevation="15dp"
+    app:cardBackgroundColor="#009688"
     app:cardCornerRadius="8dp"
     android:layout_margin="8dp">
 
@@ -25,11 +26,11 @@
                 android:id="@+id/tvEmpName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Emp Name"
+                android:text="Name"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="15sp"
                 android:textStyle="bold"/>
 
 
